@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/dialog_add_product_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:inputType="number"
+        android:hint="ID" />
+
+    <EditText
+        android:id="@+id/dialog_add_product_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/dialog_add_product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:inputType="numberDecimal"
+        android:hint="Price" />
+
+    <EditText
+        android:id="@+id/dialog_add_product_stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:inputType="number"
+        android:hint="Stock" />
+
+    <EditText
+        android:id="@+id/dialog_add_product_creationdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:inputType="date"
+        android:hint="Creation Date (ddMMyyyy)" />
+
+    <EditText
+        android:id="@+id/dialog_add_product_expirationdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:inputType="date"
+        android:hint="Expiration Date (ddMMyyyy)" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_add_product_accept"
+        android:text="ACCEPT"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

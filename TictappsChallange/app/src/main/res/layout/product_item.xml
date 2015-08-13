@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content" android:orientation="horizontal"
+    android:layout_width="fill_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content" android:orientation="vertical"
+        android:layout_weight="3"
+        android:layout_width="fill_parent">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/productName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp" />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/productPrice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"/>
+
+    </LinearLayout>
+
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/productModifyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="MODIFY"
+        android:focusable="false" />
+
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/productRemoveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="REMOVE"
+        android:focusable="false" />
+
+</LinearLayout>
