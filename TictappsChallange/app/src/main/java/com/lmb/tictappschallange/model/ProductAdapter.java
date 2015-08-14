@@ -25,7 +25,6 @@ public class ProductAdapter extends ArrayAdapter<SugarProduct> implements Filter
     ProductAdapterListener mListener = null;
 
     public interface ProductAdapterListener {
-        public void onModifyProduct(int position, View v);
         public void onRemoveProduct(int position, View v);
     }
 
@@ -76,7 +75,6 @@ public class ProductAdapter extends ArrayAdapter<SugarProduct> implements Filter
             v = inflater.inflate(R.layout.product_item, null);
             holder.mTextviewName = (TextView) v.findViewById(R.id.productName);
             holder.mTextviewPrice = (TextView) v.findViewById(R.id.productPrice);
-            holder.mButtonModify = (Button) v.findViewById(R.id.productModifyBtn);
             holder.mButtonRemove = (Button) v.findViewById(R.id.productRemoveBtn);
             v.setTag(holder);
         }
@@ -89,13 +87,6 @@ public class ProductAdapter extends ArrayAdapter<SugarProduct> implements Filter
             holder.mTextviewName.setText(p.title);
             holder.mTextviewPrice.setText("$" + String.valueOf(p.price));
         }
-
-        Button anModifyProductButton = (Button) v.findViewById(R.id.productModifyBtn);
-        anModifyProductButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                mListener.onModifyProduct(position, v);
-            }
-        });
 
         Button anRemoveProductButton = (Button) v.findViewById(R.id.productRemoveBtn);
         anRemoveProductButton.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +105,6 @@ public class ProductAdapter extends ArrayAdapter<SugarProduct> implements Filter
     public static class ViewHolder {
         TextView mTextviewName;
         TextView mTextviewPrice;
-        Button mButtonModify;
         Button mButtonRemove;
     }
 

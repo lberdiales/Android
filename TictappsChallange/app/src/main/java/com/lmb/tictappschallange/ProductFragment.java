@@ -182,15 +182,7 @@ public class ProductFragment extends ListFragment implements ProductAdapter.Prod
         // Indicates the selected item has been checked
         getListView().setItemChecked(pos, true);
 
-        if (null != mListener) {
-            // Notify the active callbacks interface (the activity, if the
-            // fragment is attached to one) that an item has been selected.
-            mListener.onProductSelection(mProducts.get(pos).productId);
-        }
-    }
-
-    @Override
-    public void onModifyProduct(final int position, View v) {
+        final int position = pos;
         final Dialog d = new Dialog(mContext);
 
         d.setContentView(R.layout.dialog_product);
@@ -240,6 +232,12 @@ public class ProductFragment extends ListFragment implements ProductAdapter.Prod
         });
 
         d.show();
+
+        if (null != mListener) {
+            // Notify the active callbacks interface (the activity, if the
+            // fragment is attached to one) that an item has been selected.
+            mListener.onProductSelection(mProducts.get(position).productId);
+        }
     }
 
     @Override
