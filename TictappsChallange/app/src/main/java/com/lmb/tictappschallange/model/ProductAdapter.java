@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-public class ProductAdapter extends ArrayAdapter<Product> implements Filterable {
+public class ProductAdapter extends ArrayAdapter<SugarProduct> implements Filterable {
     ProductAdapterListener mListener = null;
 
     public interface ProductAdapterListener {
@@ -30,22 +30,22 @@ public class ProductAdapter extends ArrayAdapter<Product> implements Filterable 
     }
 
     private Context mContext;
-    private List<Product> mProducts;
+    private List<SugarProduct> mProducts;
     private Filter mFilter;
-    private List<Product> mOrigProducts;
+    private List<SugarProduct> mOrigProducts;
 
     public ProductAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
     }
 
-    public ProductAdapter(Context context, int resource, List<Product> products) {
+    public ProductAdapter(Context context, int resource, List<SugarProduct> products) {
         super(context, resource, products);
 
         mContext = context;
         mProducts = products;
     }
 
-    public ProductAdapter(Context context, int resource, List<Product> products, ProductAdapterListener buttonListener) {
+    public ProductAdapter(Context context, int resource, List<SugarProduct> products, ProductAdapterListener buttonListener) {
         super(context, resource, products);
 
         mContext = context;
@@ -58,7 +58,7 @@ public class ProductAdapter extends ArrayAdapter<Product> implements Filterable 
         return mProducts.size();
     }
 
-    public Product getItem(int position) {
+    public SugarProduct getItem(int position) {
         return mProducts.get(position);
     }
 
@@ -84,10 +84,10 @@ public class ProductAdapter extends ArrayAdapter<Product> implements Filterable 
             holder = (ViewHolder) v.getTag();
         }
 
-        Product p = mProducts.get(position);
+        SugarProduct p = mProducts.get(position);
         if (p != null) {
-            holder.mTextviewName.setText(p.getTitle());
-            holder.mTextviewPrice.setText("$" + String.valueOf(p.getPrice()));
+            holder.mTextviewName.setText(p.title);
+            holder.mTextviewPrice.setText("$" + String.valueOf(p.price));
         }
 
         Button anModifyProductButton = (Button) v.findViewById(R.id.productModifyBtn);
@@ -144,9 +144,9 @@ public class ProductAdapter extends ArrayAdapter<Product> implements Filterable 
             }
             else {
                 // We perform filtering operation
-                ArrayList<Product> aProductList = new ArrayList<Product>();
+                ArrayList<SugarProduct> aProductList = new ArrayList<SugarProduct>();
 
-                for (Product p : mProducts) {
+                for (SugarProduct p : mProducts) {
                     switch(constraint.toString()) {
                         case EXPIRADOS:
                             if(p.hasExpired())
@@ -159,7 +159,7 @@ public class ProductAdapter extends ArrayAdapter<Product> implements Filterable 
                             break;
 
                         case ULTIMOS90D:
-                            if(!p.getCreationDate().isEmpty()) {
+                            if(!p.creationDate.isEmpty()) {
                                 try {
                                     SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
 
@@ -167,7 +167,7 @@ public class ProductAdapter extends ArrayAdapter<Product> implements Filterable 
                                     cal.add(Calendar.DAY_OF_YEAR, -90);
                                     Date today90 = cal.getTime();
 
-                                    if(sdf.parse(p.getCreationDate()).after(today90))
+                                    if(sdf.parse(p.creationDate).after(today90))
                                         aProductList.add(p);
                                 } catch (ParseException e) {
                                     e.printStackTrace();
@@ -191,7 +191,7 @@ public class ProductAdapter extends ArrayAdapter<Product> implements Filterable 
             if(results.count == 0)
                 notifyDataSetInvalidated();
             else {
-                mProducts = (ArrayList<Product>) results.values;
+                mProducts = (ArrayList<SugarProduct>) results.values;
                 notifyDataSetChanged();
             }
         }

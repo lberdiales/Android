@@ -12,15 +12,15 @@ import com.lmb.tictappschallange.R;
 
 import java.util.List;
 
-public class CategoryAdapter extends ArrayAdapter<Category> {
+public class CategoryAdapter extends ArrayAdapter<SugarCategory> {
     private Context mContext;
-    private List<Category> mCategories;
+    private List<SugarCategory> mCategories;
 
     public CategoryAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
     }
 
-    public CategoryAdapter(Context context, int resource, List<Category> categories) {
+    public CategoryAdapter(Context context, int resource, List<SugarCategory> categories) {
         super(context, resource, categories);
 
         mContext = context;
@@ -44,10 +44,10 @@ public class CategoryAdapter extends ArrayAdapter<Category> {
             holder = (ViewHolder) v.getTag();
         }
 
-        Category p = mCategories.get(position);
+        SugarCategory p = mCategories.get(position);
         if(p != null) {
-            holder.mTextviewName.setText(p.getTitle());
-            holder.mTextviewNumOfProducts.setText("Contiene " + p.getProductList().size() + " productos");
+            holder.mTextviewName.setText(p.title);
+            holder.mTextviewNumOfProducts.setText("Contiene " + p.productList.size() + " productos");
         }
 
         return v;

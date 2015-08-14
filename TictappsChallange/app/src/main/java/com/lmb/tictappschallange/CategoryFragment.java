@@ -10,11 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.lmb.tictappschallange.db.TictappsChallangeDbHelper;
-import com.lmb.tictappschallange.model.Category;
 import com.lmb.tictappschallange.model.CategoryAdapter;
+import com.lmb.tictappschallange.model.SugarCategory;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CategoryFragment extends ListFragment {
     private static final String TAG = "CategoryFragment";
@@ -24,10 +24,7 @@ public class CategoryFragment extends ListFragment {
 
     private Context mContext;
     private CategoryAdapter mAdapter;
-    private ArrayList<Category> mCategories = new ArrayList<Category>();
-
-    //DB access
-    private TictappsChallangeDbHelper mDbHelper;
+    private List<SugarCategory> mCategories = new ArrayList<SugarCategory>();
 
     public interface CategorySelectionListener {
         public void onCategorySelection(Integer categoryId);
@@ -53,8 +50,7 @@ public class CategoryFragment extends ListFragment {
         setRetainInstance(true);
 
         mContext = getActivity();
-        mDbHelper = new TictappsChallangeDbHelper(getActivity());
-        mCategories = mDbHelper.getCategories();
+        mCategories = SugarCategory.getCategories();
 
         // Set the list adapter for the ListView
         mAdapter = new CategoryAdapter(getActivity(), R.layout.category_item, mCategories);
@@ -88,7 +84,7 @@ public class CategoryFragment extends ListFragment {
         if (null != mListener) {
             // Notify the active callbacks interface (the activity, if the
             // fragment is attached to one) that an item has been selected.
-            mListener.onCategorySelection(mCategories.get(pos).getId());
+            mListener.onCategorySelection(mCategories.get(pos).categoryId);
         }
 	}
 }
