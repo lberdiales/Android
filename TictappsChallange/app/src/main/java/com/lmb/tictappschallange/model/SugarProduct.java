@@ -5,7 +5,9 @@ import com.orm.SugarRecord;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SugarProduct extends SugarRecord<SugarProduct> {
     public Integer productId;
@@ -49,7 +51,15 @@ public class SugarProduct extends SugarRecord<SugarProduct> {
         return stock > 0;
     }
 
-    public static List<SugarProduct> getProductsByCategory(Integer category) {
-        return SugarProduct.find(SugarProduct.class, "category = ?", String.valueOf(category));
+    public static Map<Long, SugarProduct> getProductsByCategory(Integer category) {
+        Map<Long, SugarProduct> aMap = new HashMap<Long, SugarProduct>();
+
+        List<SugarProduct> aList = SugarCategory.find(SugarProduct.class, "category = ?", String.valueOf(category));
+
+        for(SugarProduct aProduct : aList) {
+            aMap.put(aProduct.getId(), aProduct);
+        }
+
+        return aMap;
     }
 }

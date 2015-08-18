@@ -4,6 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.lmb.tictappschallange.model.SugarCategory;
+import com.lmb.tictappschallange.model.SugarProduct;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class MainActivity extends Activity implements CategoryFragment.CategorySelectionListener, ProductFragment.ProductSeleciontListener {
     private static final String TAG = "MainActivity";
 
@@ -31,6 +38,11 @@ public class MainActivity extends Activity implements CategoryFragment.CategoryS
         }
     }
 
+    @Override
+    public List<SugarCategory> onGetCategories() {
+        return new ArrayList<SugarCategory>(SugarCategory.getCategories().values());
+    }
+
     // Called when the user selects a category in the CategoryFragment
     @Override
     public void onCategorySelection(Integer theCategoryId) {
@@ -43,6 +55,26 @@ public class MainActivity extends Activity implements CategoryFragment.CategoryS
         aProductFragment.setArguments(args);
 
         getFragmentManager().beginTransaction().replace(R.id.fragment_container, aProductFragment).addToBackStack(null).commit();
+    }
+
+    @Override
+    public List<SugarProduct> onGetProducts(Integer theCategory) {
+        return new ArrayList<SugarProduct>(SugarProduct.getProductsByCategory(theCategory).values());
+    }
+
+    @Override
+    public void onAddProduct(Integer productId, String title, Float price, Integer stock, Integer category, String creationDate, String expirationDate) {
+        SugarCategory.addProduct(productId, title, price, stock, category, creationDate, expirationDate);
+    }
+
+    @Override
+    public void onModifyProduct(Long product_ID, Integer productId, String title, Float price, Integer stock, Integer category, String creationDate, String expirationDate) {
+        SugarCategory.modifyProduct(product_ID, productId, title, price, stock, category, creationDate, expirationDate);
+    }
+
+    @Override
+    public void onRemoveProduct(Long product_ID) {
+        SugarCategory.removeProduct(product_ID);
     }
 
     // Called when the user selects a category in the CategoryFragment

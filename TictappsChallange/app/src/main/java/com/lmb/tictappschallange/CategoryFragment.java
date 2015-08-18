@@ -14,7 +14,9 @@ import com.lmb.tictappschallange.model.CategoryAdapter;
 import com.lmb.tictappschallange.model.SugarCategory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CategoryFragment extends ListFragment {
     private static final String TAG = "CategoryFragment";
@@ -27,6 +29,7 @@ public class CategoryFragment extends ListFragment {
     private List<SugarCategory> mCategories = new ArrayList<SugarCategory>();
 
     public interface CategorySelectionListener {
+        public List<SugarCategory> onGetCategories();
         public void onCategorySelection(Integer categoryId);
     }
 
@@ -50,7 +53,8 @@ public class CategoryFragment extends ListFragment {
         setRetainInstance(true);
 
         mContext = getActivity();
-        mCategories = SugarCategory.getCategories();
+        //mCategories = SugarCategory.getCategories();
+        mCategories = mListener.onGetCategories();
 
         // Set the list adapter for the ListView
         mAdapter = new CategoryAdapter(getActivity(), R.layout.category_item, mCategories);

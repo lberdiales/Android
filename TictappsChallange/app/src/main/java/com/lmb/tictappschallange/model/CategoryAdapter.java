@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import com.lmb.tictappschallange.R;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class CategoryAdapter extends ArrayAdapter<SugarCategory> {
     private Context mContext;

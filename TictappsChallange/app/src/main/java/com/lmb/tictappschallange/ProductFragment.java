@@ -37,12 +37,13 @@ public class ProductFragment extends ListFragment implements ProductAdapter.Prod
     private List<SugarProduct> mProducts = new ArrayList<SugarProduct>();
 
     public interface ProductSeleciontListener {
-        public void onProductSelection(Integer theProductId);
-    }
+        public List<SugarProduct> onGetProducts(Integer theCategory);
 
-    public void showProductsByCategory(Integer theCategoryId) {
-        //mProducts = mDbHelper.getProducts(theCategoryId);
-        mProducts = SugarProduct.getProductsByCategory(theCategoryId);
+        public void onAddProduct(Integer productId, String title, Float price, Integer stock, Integer category, String creationDate, String expirationDate);
+        public void onModifyProduct(Long product_ID, Integer productId, String title, Float price, Integer stock, Integer category, String creationDate, String expirationDate);
+        public void onRemoveProduct(Long product_ID);
+
+        public void onProductSelection(Integer theProductId);
     }
 
     @Override
@@ -85,17 +86,26 @@ public class ProductFragment extends ListFragment implements ProductAdapter.Prod
                                 !anEditStock.getText().toString().isEmpty() &&
                                 !anEditCreationDate.getText().toString().isEmpty()) {
 
-                            SugarProduct aNewProduct = new SugarProduct(Integer.valueOf(anEditId.getText().toString()),
+                            mListener.onAddProduct(
+                                    Integer.valueOf(anEditId.getText().toString()),
                                     anEditTitle.getText().toString(),
                                     Float.valueOf(anEditPrice.getText().toString().replace(",", ".")),
                                     Integer.valueOf(anEditStock.getText().toString()),
                                     mCategoryId,
                                     anEditCreationDate.getText().toString(),
                                     anEditExpirationDate.getText().toString()
-                                    );
+                            );
 
-                            mProducts.add(aNewProduct);
-                            aNewProduct.save();
+                            SugarProduct aProduct = new SugarProduct(
+                                    Integer.valueOf(anEditId.getText().toString()),
+                                    anEditTitle.getText().toString(),
+                                    Float.valueOf(anEditPrice.getText().toString().replace(",", ".")),
+                                    Integer.valueOf(anEditStock.getText().toString()),
+                                    mCategoryId,
+                                    anEditCreationDate.getText().toString(),
+                                    anEditExpirationDate.getText().toString()
+                            );
+                            mProducts.add(aProduct);
 
                             // We notify the data model is changed
                             mAdapter.notifyDataSetChanged();
@@ -150,7 +160,7 @@ public class ProductFragment extends ListFragment implements ProductAdapter.Prod
 
         mContext = getActivity();
         mCategoryId = getArguments().getInt(ARG_CATEGORY_ID);
-        showProductsByCategory(mCategoryId);
+        mProducts = mListener.onGetProducts(mCategoryId);
 
         // Set the list adapter for the ListView
         mAdapter = new ProductAdapter(getActivity(), R.layout.product_item, mProducts, this);
@@ -214,14 +224,23 @@ public class ProductFragment extends ListFragment implements ProductAdapter.Prod
                         !anEditStock.getText().toString().isEmpty() &&
                         !anEditCreationDate.getText().toString().isEmpty()) {
 
-                    mProducts.get(position).productId = (Integer.valueOf(anEditId.getText().toString()));
-                    mProducts.get(position).title = (anEditTitle.getText().toString());
-                    mProducts.get(position).price = (Float.valueOf(anEditPrice.getText().toString().replace(",", ".")));
-                    mProducts.get(position).stock = (Integer.valueOf(anEditStock.getText().toString()));
-                    mProducts.get(position).creationDate = (anEditCreationDate.getText().toString());
-                    mProducts.get(position).expirationDate = (anEditExpirationDate.getText().toString());
+                    mListener.onModifyProduct(
+                            mProducts.get(position).getId(),
+                            Integer.valueOf(anEditId.getText().toString()),
+                            anEditTitle.getText().toString(),
+                            Float.valueOf(anEditPrice.getText().toString().replace(",", ".")),
+                            Integer.valueOf(anEditStock.getText().toString()),
+                            mCategoryId,
+                            anEditCreationDate.getText().toString(),
+                            anEditExpirationDate.getText().toString()
+                    );
 
-                    mProducts.get(position).save();
+                    mProducts.get(position).productId = Integer.valueOf(anEditId.getText().toString());
+                    mProducts.get(position).title = anEditTitle.getText().toString();
+                    mProducts.get(position).price = Float.valueOf(anEditPrice.getText().toString().replace(",", "."));
+                    mProducts.get(position).stock = Integer.valueOf(anEditStock.getText().toString());
+                    mProducts.get(position).creationDate = anEditCreationDate.getText().toString();
+                    mProducts.get(position).expirationDate = anEditExpirationDate.getText().toString();
 
                     // We notify the data model is changed
                     mAdapter.notifyDataSetChanged();
@@ -242,7 +261,7 @@ public class ProductFragment extends ListFragment implements ProductAdapter.Prod
 
     @Override
     public void onRemoveProduct(int position, View v) {
-        mProducts.get(position).delete();
+        mListener.onRemoveProduct(mProducts.get(position).getId());
 
         mProducts.remove(position);
 

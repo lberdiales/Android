@@ -37,13 +37,6 @@ public class ProductAdapter extends ArrayAdapter<SugarProduct> implements Filter
         super(context, textViewResourceId);
     }
 
-    public ProductAdapter(Context context, int resource, List<SugarProduct> products) {
-        super(context, resource, products);
-
-        mContext = context;
-        mProducts = products;
-    }
-
     public ProductAdapter(Context context, int resource, List<SugarProduct> products, ProductAdapterListener buttonListener) {
         super(context, resource, products);
 
