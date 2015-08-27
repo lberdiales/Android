@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/usuario/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-core/2.2.4/ba1c73a441019680d10e5da6ec3103dbbdc40cb4/aws-android-sdk-core-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="ba1c73a441019680d10e5da6ec3103dbbdc40cb4">
+        <dex dex="/home/usuario/Compartida/Android/app-android/app/build/intermediates/pre-dexed/debug/aws-android-sdk-core-2.2.4-cfad47c97d9d85b9aca5e034b057cf619fdf1d08.jar" />
+    </item>
+    <item
+        jar="/home/usuario/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.2.4/d7897782927bfba16f361c241a9e73b87c30140a/aws-android-sdk-s3-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="d7897782927bfba16f361c241a9e73b87c30140a">
+        <dex dex="/home/usuario/Compartida/Android/app-android/app/build/intermediates/pre-dexed/debug/aws-android-sdk-s3-2.2.4-023206b281bd5a64c23e1b2f04ebd66bd8a02124.jar" />
+    </item>
+    <item
+        jar="/home/usuario/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-cognito/2.2.4/611d8517d307911d9cc8861614c04f2fe1e71dac/aws-android-sdk-cognito-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="611d8517d307911d9cc8861614c04f2fe1e71dac">
+        <dex dex="/home/usuario/Compartida/Android/app-android/app/build/intermediates/pre-dexed/debug/aws-android-sdk-cognito-2.2.4-8f028612872d17b9efa5279251d1876978e62ed3.jar" />
+    </item>
+    <item
+        jar="/home/usuario/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="/home/usuario/Compartida/Android/app-android/app/build/intermediates/pre-dexed/debug/gson-2.2.4-9eb6e4e770bea828ac87fcb83cf4a60fe9feffe2.jar" />
+    </item>
+    <item
+        jar="/home/usuario/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.8/77bbfe240e437ecb396d982afa0d3bd4f9090ba7/android-async-http-1.4.8.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="77bbfe240e437ecb396d982afa0d3bd4f9090ba7">
+        <dex dex="/home/usuario/Compartida/Android/app-android/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.8-810269a5e48d2bcd57c58d5ffb534c9ded42959f.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,48 @@
+<resources>
+    <string-array name="listAmbientes">
+        <item>PROD</item>
+        <item>TEST</item>
+    </string-array>
+
+    <string-array name="listAmbientesId">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="listTransacciones">
+        <item>1 transaccion por conexion</item>
+        <item>N transacciones por conexion</item>
+    </string-array>
+
+    <string-array name="listTransaccionesId">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <!--Vienen de com.amazonaws.regions.Regions.java-->
+    <string-array name="listRegions">
+        <item>US_EAST_1</item>
+        <item>US_WEST_1</item>
+        <item>US_WEST_2</item>
+        <item>EU_WEST_1</item>
+        <item>EU_CENTRAL_1</item>
+        <item>AP_SOUTHEAST_1</item>
+        <item>AP_SOUTHEAST_2</item>
+        <item>AP_NORTHEAST_1</item>
+        <item>SA_EAST_1</item>
+        <item>CN_NORTH_1</item>
+    </string-array>
+
+    <string-array name="listRegionsId">
+        <item>us-east-1</item>
+        <item>us-west-1</item>
+        <item>us-west-2</item>
+        <item>eu-west-1</item>
+        <item>eu-central-1</item>
+        <item>ap-southeast-1</item>
+        <item>ap-southeast-2</item>
+        <item>ap-northeast-1</item>
+        <item>sa-east-1</item>
+        <item>cn-north-1</item>
+    </string-array>
+</resources>

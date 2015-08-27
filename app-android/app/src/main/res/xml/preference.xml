@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:title="@string/preference_categInstitucion_title">
+
+        <EditTextPreference
+            android:title="@string/preference_categInstitucion_title"
+            android:key="@string/preference_categInstitucion_key"
+            android:defaultValue="0"
+            android:summary="@string/preference_categInstitucion_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preference_categTransacciones_title">
+
+        <ListPreference
+            android:title="@string/preference_categTransacciones_title"
+            android:summary="@string/preference_categTransacciones_summary"
+            android:key="@string/preference_categTransacciones_key"
+            android:defaultValue="1"
+            android:entries="@array/listTransacciones"
+            android:entryValues="@array/listTransaccionesId" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preference_categAmbiente_title">
+
+        <ListPreference
+            android:title="@string/preference_categAmbiente_title"
+            android:summary="@string/preference_categAmbiente_summary"
+            android:key="@string/preference_categAmbiente_key"
+            android:defaultValue="1"
+            android:entries="@array/listAmbientes"
+            android:entryValues="@array/listAmbientesId" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preference_categWsSMADM_title">
+
+        <EditTextPreference
+            android:title="@string/preference_categWsSMADM_prod_title"
+            android:key="@string/preference_categWsSMADM_prod_key"
+            android:summary="@string/preference_categWsSMADM_prod_summary" />
+        <EditTextPreference
+            android:title="@string/preference_categWsSMADM_test_title"
+            android:key="@string/preference_categWsSMADM_test_key"
+            android:summary="@string/preference_categWsSMADM_test_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preference_categWsKIOSCO_title">
+
+        <EditTextPreference
+            android:title="@string/preference_categWsKIOSCO_prod_title"
+            android:key="@string/preference_categWsKIOSCO_prod_key"
+            android:summary="@string/preference_categWsKIOSCO_prod_summary" />
+        <EditTextPreference
+            android:title="@string/preference_categWsKIOSCO_test_title"
+            android:key="@string/preference_categWsKIOSCO_test_key"
+            android:summary="@string/preference_categWsKIOSCO_test_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Configuración S3">
+
+        <ListPreference
+            android:title="S3 Region"
+            android:summary="Seleccione Region del S3"
+            android:key="s3_region"
+            android:defaultValue="us-east-1"
+            android:entries="@array/listRegions"
+            android:entryValues="@array/listRegionsId" />
+        <EditTextPreference
+            android:title="S3 Pool ID"
+            android:key="s3_pool_id"
+            android:defaultValue="us-east-1:d68ea4fe-899b-40aa-8231-5c3812b65ea9"
+            android:summary="Introduzca Pool ID del S3" />
+        <EditTextPreference
+            android:title="S3 Bucket"
+            android:key="s3_bucket"
+            android:defaultValue="documentos-kiosco"
+            android:summary="Introduzca Bucket del S3" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

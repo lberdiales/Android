@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/usuario/Compartida/Android/app-android/app/src/main/res/values/array.xml -->
+    <eat-comment/>
+    <string-array name="listAmbientes">
+        <item>PROD</item>
+        <item>TEST</item>
+    </string-array>
+    <string-array name="listAmbientesId">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="listRegions">
+        <item>US_EAST_1</item>
+        <item>US_WEST_1</item>
+        <item>US_WEST_2</item>
+        <item>EU_WEST_1</item>
+        <item>EU_CENTRAL_1</item>
+        <item>AP_SOUTHEAST_1</item>
+        <item>AP_SOUTHEAST_2</item>
+        <item>AP_NORTHEAST_1</item>
+        <item>SA_EAST_1</item>
+        <item>CN_NORTH_1</item>
+    </string-array>
+    <string-array name="listRegionsId">
+        <item>us-east-1</item>
+        <item>us-west-1</item>
+        <item>us-west-2</item>
+        <item>eu-west-1</item>
+        <item>eu-central-1</item>
+        <item>ap-southeast-1</item>
+        <item>ap-southeast-2</item>
+        <item>ap-northeast-1</item>
+        <item>sa-east-1</item>
+        <item>cn-north-1</item>
+    </string-array>
+    <string-array name="listTransacciones">
+        <item>1 transaccion por conexion</item>
+        <item>N transacciones por conexion</item>
+    </string-array>
+    <string-array name="listTransaccionesId">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <!-- From: file:/home/usuario/Compartida/Android/app-android/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/home/usuario/Compartida/Android/app-android/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Kiosco</string>
+    <string name="codigo_administrador">12345678</string>
+    <string name="preference_categAmbiente_key">ambiente</string>
+    <string name="preference_categAmbiente_summary">Seleccione ambiente de ejecucion</string>
+    <string name="preference_categAmbiente_title">Ambientes</string>
+    <string name="preference_categInstitucion_key">id_institucion</string>
+    <string name="preference_categInstitucion_summary">Introduzca el ID de la institucion</string>
+    <string name="preference_categInstitucion_title">Institucion</string>
+    <string name="preference_categTransacciones_key">transacciones</string>
+    <string name="preference_categTransacciones_summary">Seleccione cantidad de transacciones por conexion</string>
+    <string name="preference_categTransacciones_title">Transacciones</string>
+    <string name="preference_categWsKIOSCO_prod_key">ws_prod_kiosco</string>
+    <string name="preference_categWsKIOSCO_prod_summary">Introduzca url del host de servicios KIOSCO</string>
+    <string name="preference_categWsKIOSCO_prod_title">Webservice PROD KIOSCO</string>
+    <string name="preference_categWsKIOSCO_test_key">ws_test_kiosco</string>
+    <string name="preference_categWsKIOSCO_test_summary">Introduzca url del host de servicios KIOSCO</string>
+    <string name="preference_categWsKIOSCO_test_title">Webservice TEST KIOSCO</string>
+    <string name="preference_categWsKIOSCO_title">Webservices KIOSCO</string>
+    <string name="preference_categWsSMADM_prod_key">ws_prod_smadm</string>
+    <string name="preference_categWsSMADM_prod_summary">Introduzca url del host de servicios SMADM</string>
+    <string name="preference_categWsSMADM_prod_title">Webservice PROD SMADM</string>
+    <string name="preference_categWsSMADM_test_key">ws_test_smadm</string>
+    <string name="preference_categWsSMADM_test_summary">Introduzca url del host de servicios SMADM</string>
+    <string name="preference_categWsSMADM_test_title">Webservice TEST SMADM</string>
+    <string name="preference_categWsSMADM_title">Webservices SMADM</string>
+    <string name="smadmkeyboardfragment_btn0_text">0</string>
+    <string name="smadmkeyboardfragment_btn1_text">1</string>
+    <string name="smadmkeyboardfragment_btn2_text">2</string>
+    <string name="smadmkeyboardfragment_btn3_text">3</string>
+    <string name="smadmkeyboardfragment_btn4_text">4</string>
+    <string name="smadmkeyboardfragment_btn5_text">5</string>
+    <string name="smadmkeyboardfragment_btn6_text">6</string>
+    <string name="smadmkeyboardfragment_btn7_text">7</string>
+    <string name="smadmkeyboardfragment_btn8_text">8</string>
+    <string name="smadmkeyboardfragment_btn9_text">9</string>
+    <string name="smadmkeyboardfragment_btnAceptar_text">Aceptar</string>
+    <string name="smadmkeyboardfragment_btnBorrar_text">&lt;</string>
+    <string name="smadmkeyboardfragment_btnCancelar_text">Cancelar</string>
+    <string name="smadmkeyboardfragment_tvTitulo_text">Autogestión: Ingrese tarjeta o DNI</string>
+    <string name="ws_smadm_error">***&lt;br></string>
+    <!-- From: file:/home/usuario/Compartida/Android/app-android/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.DeviceDefault">
+        <!-- Customize your theme here. -->
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:keepScreenOn">true</item>
+    </style>
+</resources>

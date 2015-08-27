@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Kiosco</string>
+    <string name="action_settings">Settings</string>
+
+    <!--PreferenceActivity-->
+    <string name="preference_categInstitucion_title">Institucion</string>
+    <string name="preference_categInstitucion_key">id_institucion</string>
+    <string name="preference_categInstitucion_summary">Introduzca el ID de la institucion</string>
+
+    <string name="preference_categTransacciones_title">Transacciones</string>
+    <string name="preference_categTransacciones_key">transacciones</string>
+    <string name="preference_categTransacciones_summary">Seleccione cantidad de transacciones por conexion</string>
+
+    <string name="preference_categAmbiente_title">Ambientes</string>
+    <string name="preference_categAmbiente_key">ambiente</string>
+    <string name="preference_categAmbiente_summary">Seleccione ambiente de ejecucion</string>
+
+    <string name="preference_categWsSMADM_title">Webservices SMADM</string>
+    <string name="preference_categWsSMADM_prod_title">Webservice PROD SMADM</string>
+    <string name="preference_categWsSMADM_prod_key">ws_prod_smadm</string>
+    <string name="preference_categWsSMADM_prod_summary">Introduzca url del host de servicios SMADM</string>
+    <string name="preference_categWsSMADM_test_title">Webservice TEST SMADM</string>
+    <string name="preference_categWsSMADM_test_key">ws_test_smadm</string>
+    <string name="preference_categWsSMADM_test_summary">Introduzca url del host de servicios SMADM</string>
+
+    <string name="preference_categWsKIOSCO_title">Webservices KIOSCO</string>
+    <string name="preference_categWsKIOSCO_prod_title">Webservice PROD KIOSCO</string>
+    <string name="preference_categWsKIOSCO_prod_key">ws_prod_kiosco</string>
+    <string name="preference_categWsKIOSCO_prod_summary">Introduzca url del host de servicios KIOSCO</string>
+    <string name="preference_categWsKIOSCO_test_title">Webservice TEST KIOSCO</string>
+    <string name="preference_categWsKIOSCO_test_key">ws_test_kiosco</string>
+    <string name="preference_categWsKIOSCO_test_summary">Introduzca url del host de servicios KIOSCO</string>
+
+    <!--LoginActivity-->
+    <string name="codigo_administrador">12345678</string> <!-- Ver si meterlo como una preferencia-->
+    <string name="ws_smadm_error">***&lt;br></string>
+
+    <string name="smadmkeyboardfragment_tvTitulo_text">Autogestión: Ingrese tarjeta o DNI</string>
+    <string name="smadmkeyboardfragment_btn1_text">1</string>
+    <string name="smadmkeyboardfragment_btn2_text">2</string>
+    <string name="smadmkeyboardfragment_btn3_text">3</string>
+    <string name="smadmkeyboardfragment_btn4_text">4</string>
+    <string name="smadmkeyboardfragment_btn5_text">5</string>
+    <string name="smadmkeyboardfragment_btn6_text">6</string>
+    <string name="smadmkeyboardfragment_btn7_text">7</string>
+    <string name="smadmkeyboardfragment_btn8_text">8</string>
+    <string name="smadmkeyboardfragment_btn9_text">9</string>
+    <string name="smadmkeyboardfragment_btn0_text">0</string>
+    <string name="smadmkeyboardfragment_btnBorrar_text">&lt;</string>
+    <string name="smadmkeyboardfragment_btnAceptar_text">Aceptar</string>
+    <string name="smadmkeyboardfragment_btnCancelar_text">Cancelar</string>
+
+    <!--OptionsActivity-->
+</resources>
